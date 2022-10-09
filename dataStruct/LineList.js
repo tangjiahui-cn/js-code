@@ -26,10 +26,12 @@ class LineList {
 
     remove (data) {
         this.list = this.list.filter(x => x !== data)
+        this.length = this.list.length
     }
 
     removeIndex (index) {
         this.list = this.list.filter((_, ind) => ind !== index)
+        this.length = this.list.length
     }
 
     update (data, updateData) {
