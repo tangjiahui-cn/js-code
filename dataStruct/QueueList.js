@@ -1,12 +1,12 @@
 /**
- * 栈（后进先出）
+ * 队列（先进先出）
  * 
  * At 2022/10/09
  * By T.J.H
  */
 
 
- class StackList {
+ class QueueList {
     length = 0
 
     constructor () {
@@ -30,8 +30,8 @@
 
     pop () {
         const lastIndex = this.list.length - 1
-        const data = this.list[lastIndex]
-        this.list = this.list.slice(0, lastIndex)
+        const data = this.list[0]
+        this.list = this.list.slice(1)
         return data
     }
 
@@ -44,15 +44,15 @@
     }
 }
 
-const list = new StackList()
+const list = new QueueList()
 
 list.add('1')
 list.add('2')
 list.add('3')
 list.add('4')
 
-list.pop()  // 1, 2, 3
+list.pop()  // 2, 3, 4
 list.update('3', '33')
 
-list.show()  // '1, 2, 33'
+list.show()  // '2, 33, 4'
 
